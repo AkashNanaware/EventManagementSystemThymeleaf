@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Event</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        form {
+            width: 50%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h1>Create Event</h1>
+<form action="#" th:action="@{/eventdetails/create}" th:object="${event}" method="post">
+    <label for="eventid">Event ID:</label>
+    <input type="text" id="eventid" th:field="*{eventid}"/><br/>
+    <label for="eventname">Event Name:</label>
+    <input type="text" id="eventname" th:field="*{eventname}"/><br/>
+    <label for="eventlocation">Event Location:</label>
+    <input type="text" id="eventlocation" th:field="*{eventlocation}"/><br/>
+    <label for="eventdate">Event Date:</label>
+    <input type="text" id="eventdate" th:field="*{eventdate}"/><br/>
+    <label for="eventcost">Event Cost:</label>
+    <input type="text" id="eventcost" th:field="*{eventcost}"/><br/>
+    <input type="submit" value="Create"/>
+</form>
+</body>
+</html>
